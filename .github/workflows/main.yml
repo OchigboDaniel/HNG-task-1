@@ -1,0 +1,22 @@
+name: Library Maganager Github Action
+
+on:
+  push: main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3 # checkout the repo.
+      - name: Use 
+      
+        uses: actions/setup-node@v3 # checkout the repo.
+        with:
+          node-version: 16
+      
+      - name: Install depencies
+        run: npm install
+      - name: Run test
+        run: npm test
+
