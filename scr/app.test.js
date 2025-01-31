@@ -2,10 +2,14 @@ const app = require("./app");
 const supertest = require("supertest");
 const request = supertest(app);
 
-describe("/ endpoint", () => {
-  it("should return a response", async () => {
-    const response = await request.get("/");
+describe("Book api", () => {
+  it("It should add book details to database", async () => {
+    const response = await request.post("/books").send({
+        title: "Test Book",
+        author: "Test Author",
+        genre: "Test Genre"
+    });
     expect(response.status).toBe(200);
-    expect(response.text).toBe("the end point works");
+    expect(response.text).toBe("Book successfully added");
   });
 });
