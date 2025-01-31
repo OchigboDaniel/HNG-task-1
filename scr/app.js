@@ -3,11 +3,14 @@ const app = express();
 const globalErrorHandler = require("./controller/errorController");
 const CustomeError = require("./utiles/customeError");
 const ratelimit = require("express-rate-limit");
-const body_parser = require("body-parser");
+const cors = require("cors")
+const bodyParser = require("body-parser");
 
 const routes = require("./routes");
 
 app.use(express.json());
+app.use(cors());
+app.use(bodyParser.json());
 
 const limiter = ratelimit({
   max: 1000,
