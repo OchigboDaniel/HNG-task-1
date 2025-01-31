@@ -3,13 +3,9 @@ const supertest = require("supertest");
 const request = supertest(app);
 
 describe("Book api", () => {
-  it("It should add book details to database", async () => {
-    const response = await request.post("/books").send({
-        title: "Test Book",
-        author: "Test Author",
-        genre: "Test Genre"
-    });
+  it("It should retive book records", async () => {
+    const response = await request.get("/api/v1/books");
     expect(response.status).toBe(200);
-    expect(response.text).toBe("Book successfully added");
+    expect(response.text).toBe("Book details recieve successfully.");
   });
 });
