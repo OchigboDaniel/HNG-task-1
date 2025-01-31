@@ -61,10 +61,11 @@ const crudFunctions = {
         next(err);
         return;
       }
+      console.log(title)
 
       // SQl querry to insert the new book
       const sql = `INSERT INTO books (id, title, author, genre) VALUES (?,?,?,?)`;
-      db.run(sql, [customId, title, author, genre], (err, row) => {
+      db.run(sql, [String(customId), title, author, genre], (err) => {
         if (err) {
           const error = new CustomeError("Error Inserting Book", 505);
           next(error);
