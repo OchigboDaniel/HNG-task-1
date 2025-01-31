@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest scr/app.test.js",
-    "server": "nodemon scr"
+    "test": "jest src/app.test.js",
+    "server": "nodemon src"
   },
   "keywords": [],
   "author": "",

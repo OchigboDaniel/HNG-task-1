@@ -1,4 +1,4 @@
-const CustomeError = require("../utiles/customeError");
+const CustomeError = require("../utiles/customeError.js");
 
 const db = require("../database/db.js");
 
