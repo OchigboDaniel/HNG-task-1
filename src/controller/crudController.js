@@ -144,6 +144,22 @@ const crudFunctions = {
     );
   },
 
+  deleteAllBooks: (req, res, next) => {
+
+    db.run("DELETE FROM books",  (err) => {
+      if (err) {
+        const error = new CustomeError(err.message, 500);
+        next(error);
+        return;
+      }
+
+      res.status(200).json({
+        status: "success",
+        message: "All Book record deleted successfully.",
+      });
+    });
+  },
+
   deleteBook: (req, res, next) => {
     const bookId = req.params.id;
     console.log(bookId);

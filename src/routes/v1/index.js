@@ -20,4 +20,7 @@ router.put("/books/:id", crudFunctions.updateBookDetails);
 // This route removes a book from the library system using the id
 router.delete("/books/:id", crudFunctions.deleteBook);
 
+// this route deletes all record
+router.delete("/books", crudFunctions.deleteAllBooks)
+
 module.exports = router;
